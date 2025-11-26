@@ -18,9 +18,6 @@ class CourseController extends Controller
         return view('courses.index', compact('courses'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function indexPublic()
     {
         $courses = Course::latest()->get();
@@ -28,6 +25,9 @@ class CourseController extends Controller
         return view('public.index', compact('courses'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         return view('courses.create');
