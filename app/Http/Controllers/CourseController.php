@@ -45,7 +45,7 @@ class CourseController extends Controller
         Course::create($data);
 
         // 4. Redirigir (Por ahora al dashboard, luego haremos el index)
-        return redirect()->route('dashboard')->with('success', 'Curso creado exitosamente.');
+        return redirect()->route('courses.index.public')->with('success', 'Curso creado exitosamente.');
     }
 
     /**
