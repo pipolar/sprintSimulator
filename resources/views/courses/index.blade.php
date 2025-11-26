@@ -4,7 +4,7 @@
             {{ __('Administración de Cursos') }}
         </h2>
         {{-- Enlace rápido para la creación --}}
-        <a href="{{ route('cursos.create') }}" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow transition ease-in-out duration-150">
+        <a href="{{ route('courses.create') }}" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow transition ease-in-out duration-150">
             + Crear Nuevo Curso
         </a>
     </x-slot>
@@ -32,17 +32,17 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                                @foreach ($cursos as $curso)
+                                @foreach ($courses as $course)
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $curso->titulo }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $curso->instructor }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $curso->slug }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $course->title }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $course->instructor }}</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $course->slug }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             {{-- Botón de Edición --}}
-                                            <a href="{{ route('cursos.edit', $curso) }}" class="text-indigo-600 hover:text-indigo-900 mr-4">Editar</a>
+                                            <a href="{{ route('courses.edit', $course) }}" class="text-indigo-600 hover:text-indigo-900 mr-4">Editar</a>
 
                                             {{-- Formulario de Eliminación --}}
-                                            <form action="{{ route('cursos.destroy', $curso) }}" method="POST" class="inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este curso?');">
+                                            <form action="{{ route('courses.destroy', $course) }}" method="POST" class="inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este curso?');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="text-red-600 hover:text-red-900">Eliminar</button>

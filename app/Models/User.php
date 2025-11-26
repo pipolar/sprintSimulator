@@ -47,8 +47,7 @@ class User extends Authenticatable
     }
 
     // El usurio podrá tener varias reseñas
-    public function reviews()
-    {
+    public function reviews() {
         return $this->hasMany(Review::class);
     }
 }
